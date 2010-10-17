@@ -6,11 +6,13 @@ Gem::Specification.new do |s|
   s.name        = "myyard"
   s.version     = Myyard::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["TODO: Write your name"]
-  s.email       = ["TODO: Write your email address"]
-  s.homepage    = "http://rubygems.org/gems/myyard"
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.authors     = ["Dr Nic Williams"]
+  s.email       = ["drnicwilliams@gmail.com"]
+  s.homepage    = "http://github.com/drnic/myyard"
+  s.summary     = %q{Deploy Rails apps to a local yard of VMs}
+  s.description = <<-EOS.gsub(/^    /, '')
+    The whole team can experience a constant, reproducable development environment with virtual machines.
+  EOS
 
   s.rubyforge_project = "myyard"
 
