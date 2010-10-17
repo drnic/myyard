@@ -1,10 +1,7 @@
 #!/usr/bin/env ruby
-#
-#  Created on 2010-10-17.
-#  Copyright (c) 2010. All rights reserved.
 
-require 'rubygems'
-require File.expand_path(File.dirname(__FILE__) + "/../lib/myyard")
-require "my/cli"
+$:.unshift(File.expand_path(File.dirname(__FILE__) + "/../lib"))
+require "myyard"
+require "myyard/cli"
 
-My::CLI.execute(STDOUT, ARGV)
+My::CLI.start

@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     myyard (0.0.1)
+      thor (~> 0.14.3)
 
 GEM
   remote: http://rubygems.org/
@@ -29,6 +30,7 @@ GEM
       rspec-core (= 2.0.0)
       rspec-expectations (= 2.0.0)
     term-ansicolor (1.0.5)
+    thor (0.14.3)
 
 PLATFORMS
   ruby
@@ -37,3 +39,4 @@ DEPENDENCIES
   cucumber (~> 0.9.2)
   myyard!
   rspec (~> 2.0.0)
+  thor (~> 0.14.3)
