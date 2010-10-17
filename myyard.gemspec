@@ -20,4 +20,9 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
+  
+  # s.add_dependency 'abc', '1.2.3'
+  
+  s.add_development_dependency 'rspec', '~>2.0.0'
+  s.add_development_dependency 'cucumber', '~>0.9.2'
 end
