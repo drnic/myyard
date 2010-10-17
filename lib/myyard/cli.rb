@@ -6,7 +6,7 @@ module My
     
     desc "setup", "Setup this Rails/Rack application for a VM cluster yard"
     def setup
-      exec "vagrant init --box_name myyard"
+      exec "vagrant init myyard"
     end
   end
   

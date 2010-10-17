@@ -1,4 +1,3 @@
-@wip
 Feature: Setup local vm yard
   In order to reduce costs of app development
   As a developer or team leader
