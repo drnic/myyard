@@ -27,7 +27,7 @@ module Myyard
     method_option :all, :desc => "destroy all running VMs", :type => :boolean, :default => false
     def destroy(env)
       error "Flag --all not yet supported" if options[:all]
-      error "Not yet supported"
+      exec "vagrant destroy"
     end
     
     private
