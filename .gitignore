@@ -3,3 +3,5 @@ pkg/*
 .bundle
 *.rbc
 tmp
+*.box
+*.box.tmp

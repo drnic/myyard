@@ -8,6 +8,11 @@ module Myyard
     def setup
       exec "vagrant init myyard"
     end
+    
+    desc "download", "Download the VM image (400Mb+)"
+    def download
+      exec "vagrant box add myyard /path/to/the/package.box"
+    end
   end
   
 end

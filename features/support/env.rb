@@ -1,8 +1,8 @@
 require File.dirname(__FILE__) + "/../../lib/myyard"
 
 require 'bundler'
-gem 'cucumber'
-gem 'rspec'
+require 'cucumber'
+require 'rspec'
 
 Before do
   @tmp_root = File.dirname(__FILE__) + "/../../tmp"

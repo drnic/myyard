@@ -20,3 +20,13 @@ task :cucumber => 'cucumber:ok'
 
 desc "Default specs and cucumber features"
 task :default => [:spec, :cucumber]
+
+
+desc "Download the required virtualbox myyard.box file for cucumber tests"
+task :download_box do
+  require "thor"
+  puts "#{Thor::Shell::Color::YELLOW}Downloading a large virtualbox image...#{Thor::Shell::Color::CLEAR}"
+  exec "curl http://files.vagrantup.com/lucid32.box > features/fixtures/myyard.box.tmp"
+  require "fileutils"
+  FileUtils.mv("features/fixtures/myyard.box.tmp", "features/fixtures/myyard.box")
+end
