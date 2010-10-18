@@ -54,6 +54,11 @@ To get started in development of My Yard:
     rake download_box
     rake cucumber
 
+To build and install the gem locally:
+
+    rake build
+    gem install pkg/myyard-*.gem
+    
 ## License
 
 (The MIT License)
