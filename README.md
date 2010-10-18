@@ -2,6 +2,10 @@
 
 NOTICE: This isn't working yet.
 
+The word 'yard' is used synonymously with 'cluster' (a set of instances)
+and 'environment' (the description of a set of instances). Probably dubious to
+do so, but it's a cute word.
+
 ## Installation
 
     gem install myyard
