@@ -1,7 +1,7 @@
 Feature: Setup local vm yard
 
   Background:
-    Given a Rack application
+    Given I have a Rack application
   
   Scenario: Initial setup for an application
     When I run local executable "my" with arguments "setup"
