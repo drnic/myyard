@@ -5,6 +5,7 @@ NOTICE: This isn't working yet.
 ## Installation
 
     gem install myyard
+    myyard download
 
 ## Usage
 
