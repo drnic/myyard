@@ -8,15 +8,42 @@ do so, but it's a cute word.
 
 ## Installation
 
+Everyone using My Yard, either setting up a new project or joining a team, needs to run the 
+following installation steps:
+
     gem install myyard
     myyard download
 
+The last step will download a 450Mb+ virtualbox image. Yay.
+
 ## Usage
+
+To use My Yard for the first time on a project:
 
     cd /my/rails/or/rack/app
     my setup
     my deploy
-    my deploy production # or staging
+
+To join a team that is using My Yard:
+
+    cd /my/rails/or/rack/app
+    my setup
+    my deploy # WIP
+
+By default, this will setup VMs for the Rails development environment.
+To deploy an application for an alternate environment, say 'production', use:
+
+    my deploy production # WIP
+
+Note, this will build and operate separate VMs from your development environment.
+
+To shut down the VMs for a specific environment:
+
+    my destroy development # WIP
+
+You can shut down all your applications' running VMs at any time, from any location:
+
+    my destroy --all # WIP
 
 ## License
 

@@ -9,16 +9,26 @@ Feature: Deploying applications
     
   Scenario: Initial deploy to single instance yard
     When I run local executable "my" with arguments "deploy"
-    Then I should see "localhost:3000"
     When I view webpage "http://localhost:3000"
-    Then I should see "Hello World"
+    Then I should see "Hello World [development]"
   
   Scenario: Re-deploy to running VM
-    Given I have the yard of VMs running
-    When I run local executable "my" with arguments "deploy"
-    Then I should see "localhost:3000"
+    Given I run local executable "my" with arguments "deploy"
+    When  I run local executable "my" with arguments "deploy"
     When I view webpage "http://localhost:3000"
-    Then I should see "Hello World"
+    Then I should see "Hello World [development]"
+  
+  Scenario: Deploy a specific Rack environment
+    When I run local executable "my" with arguments "deploy production"
+    When I view webpage "http://localhost:3000"
+    Then I should see "Hello World [production]"
+  
+  Scenario: Shut down a specific Rack environment's VMs
+    Given I run local executable "my" with arguments "deploy"
+    When I run local executable "my" with arguments "destroy development"
+    
+  
+  
   
   
   

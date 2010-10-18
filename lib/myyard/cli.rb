@@ -10,14 +10,28 @@ module Myyard
       exec "vagrant box add myyard #{path}"
     end
 
-    desc "setup", "Setup this Rails/Rack application for a VM cluster yard"
+    desc "setup", "Setup application to use local VMs"
     def setup
       exec "vagrant init myyard"
     end
     
-    desc "deploy [ENV]", "Deploy app to local VM (default env: development)"
+    desc "deploy [ENV]", "Deploy app to local VMs (default env: development)"
     def deploy(env = "development")
+      error "No support yet for deployment of alternate environments" unless env == "development"
       exec "vagrant up"
+    end
+    
+    desc "destroy ENV", "Destroy the running VMs for target environment"
+    method_option :all, :desc => "destroy all running VMs", :type => :boolean, :default => false
+    def destroy(env)
+      error "Flag --all not yet supported" if options[:all]
+      error "Not yet supported"
+    end
+    
+    private
+    def error(msg)
+      say msg, :red
+      exit 1
     end
   end
   
