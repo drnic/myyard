@@ -10,10 +10,9 @@ Feature: Setup local vm yard
     When I run local executable "my" with arguments "setup"
     Then file "Vagrantfile" is created
   
-  @wip
   Scenario: Download a VM box from a local file
     Given I have the required box file (separate download)
-    When I run local executable "my" with arguments "download myyard.box"
+    When I run local executable "my" with arguments "download"
     Then vagrant should have a "myyard" box
   
   

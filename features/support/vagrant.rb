@@ -1,8 +1,8 @@
 module VagrantHelpers
   require "thor"
   def fixture_box_available!
-    box = File.expand_path(File.join(File.dirname(__FILE__), "..", "fixtures", "myyard.box"))
-    unless File.exist?(box)
+    @fixture_box = File.expand_path(File.join(File.dirname(__FILE__), "..", "fixtures", "myyard.box"))
+    unless File.exist?(@fixture_box)
       $stderr.puts <<-EOS.gsub(/^    /, '')
       
       #{Thor::Shell::Color::RED}ERROR!!#{Thor::Shell::Color::CLEAR}
@@ -15,9 +15,11 @@ module VagrantHelpers
       
       
       EOS
-      File.should be_exist(box)
+      File.should be_exist(@fixture_box)
     end
+    ENV['MYYARD_BOX'] = @fixture_box
   end
 end
 
 World(VagrantHelpers)
+After { ENV['MYYARD_BOX'] = nil }

@@ -11,7 +11,8 @@ module Myyard
     
     desc "download", "Download the VM image (400Mb+)"
     def download
-      exec "vagrant box add myyard /path/to/the/package.box"
+      path = ENV['MYYARD_BOX'] || "http://files.vagrantup.com/lucid32.box"
+      exec "vagrant box add myyard #{path}"
     end
   end
   
