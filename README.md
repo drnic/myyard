@@ -45,6 +45,15 @@ You can shut down all your applications' running VMs at any time, from any locat
 
     my destroy --all # WIP
 
+## Development
+
+To get started in development of My Yard:
+
+    gem install bundle
+    bundle install
+    rake download_box
+    rake cucumber
+
 ## License
 
 (The MIT License)
