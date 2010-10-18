@@ -22,4 +22,9 @@ module VagrantHelpers
 end
 
 World(VagrantHelpers)
-After { ENV['MYYARD_BOX'] = nil }
+After do
+  ENV['MYYARD_BOX'] = nil
+  in_project_folder do
+    exec "vagrant destroy"
+  end
+end
