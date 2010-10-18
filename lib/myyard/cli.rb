@@ -8,11 +8,13 @@ module Myyard
     def download
       path = ENV['MYYARD_BOX'] || "http://files.vagrantup.com/lucid32.box"
       exec "vagrant box add myyard #{path}"
+      success "Phew! You won't have to do that again for a while. You are ready to use My Yard for running Rails apps."
     end
 
     desc "setup", "Setup application to use local VMs"
     def setup
       exec "vagrant init myyard"
+      success "You can now edit Vagrantfile to your tastes. Then run 'ey deploy'."
     end
     
     desc "deploy [ENV]", "Deploy app to local VMs (default env: development)"
@@ -29,6 +31,11 @@ module Myyard
     end
     
     private
+    def success(msg)
+      say msg, :green
+      exit 0
+    end
+    
     def error(msg)
       say msg, :red
       exit 1
