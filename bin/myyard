@@ -4,4 +4,4 @@ $:.unshift(File.expand_path(File.dirname(__FILE__) + "/../lib"))
 require "myyard"
 require "myyard/cli"
 
-My::CLI.start
+Myyard::CLI.start

@@ -1,6 +1,6 @@
 require 'thor'
 
-module My
+module Myyard
   class CLI < Thor
     map "-v" => :version, "--version" => :version, "-h" => :help, "--help" => :help
     
