@@ -24,8 +24,10 @@ end
 World(VagrantHelpers)
 After('~@novagrant') do
   in_project_folder do
-    @stdout = File.expand_path(File.join(@tmp_root, "vagrant-destroy.out"))
-    in_project_folder { exec "vagrant destroy > #{@stdout} 2> #{@stdout}" }
+    if File.exist?(".vagrant")
+      @stdout = File.expand_path(File.join(@tmp_root, "vagrant-destroy.out"))
+      in_project_folder { exec "vagrant destroy > #{@stdout} 2> #{@stdout}" }
+    end
   end
   ENV['MYYARD_BOX'] = nil
 end
