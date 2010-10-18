@@ -39,7 +39,7 @@ Note, this will build and operate separate VMs from your development environment
 
 To shut down the VMs for a specific environment:
 
-    my destroy development # WIP
+    my destroy development
 
 You can shut down all your applications' running VMs at any time, from any location:
 
