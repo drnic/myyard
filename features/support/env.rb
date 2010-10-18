@@ -3,6 +3,7 @@ require File.dirname(__FILE__) + "/../../lib/myyard"
 require 'bundler'
 require 'cucumber'
 require 'rspec'
+require 'open-uri'
 
 Before do
   @tmp_root = File.dirname(__FILE__) + "/../../tmp"

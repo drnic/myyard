@@ -3,7 +3,7 @@ Given /^I have the required box file \(separate download\)$/ do
 end
 
 Then /^vagrant should have a "([^"]*)" box$/ do |box|
-  in_home_folder do
+  in_project_folder do
     boxes = `vagrant box list`
     boxes.should_not =~ /There are no installed boxes/
     boxes.should =~ /#{box}/

@@ -22,9 +22,10 @@ module VagrantHelpers
 end
 
 World(VagrantHelpers)
-After do
-  ENV['MYYARD_BOX'] = nil
+After('~@novagrant') do
   in_project_folder do
-    exec "vagrant destroy"
+    @stdout = File.expand_path(File.join(@tmp_root, "vagrant-destroy.out"))
+    in_project_folder { exec "vagrant destroy > #{@stdout} 2> #{@stdout}" }
   end
+  ENV['MYYARD_BOX'] = nil
 end
